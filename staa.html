@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <style>
+    .letter-box {
+      width: 278px;
+      height: 176px;
+      padding: 5px;
+      box-sizing: border-box;
+    }
+
+    .letter-border {
+      width: 100%;
+      height: 100%;
+      /* background: #fbfaf5; */
+    }
+
+    .letter-box {
+      width: 278px;
+      height: 176px;
+      padding: 5px;
+      box-sizing: border-box;
+      background: linear-gradient(45deg, #f25953 12.5%, #fbfaf5 12.5%, #fbfaf5 25%, #5590d6 25%, #5590d6 37.5%, #fbfaf5 37.5%, #fbfaf5 50%, #f25953 50%, #f25953 62.5%, #fbfaf5 62.5%, #fbfaf5 75%, #5590d6 75%, #5590d6 87.5%, #fbfaf5 87.5%, #fbfaf5 100%);
+      /* background: linear-gradient(0deg,#f25953 25%,#fbfaf5 25%,#fbfaf5 50%,#5590d6 50%,#5590d6 75%,#fbfaf5 75%); */
+      background-size: 70px 70px;
+      /* background-repeat: no-repeat; */
+    }
+
+    .adv_box {
+      position: relative;
+      width: 400px;
+      height: 271px;
+    }
+
+    .adv_box a {
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+    }
+
+    .adv_box img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      -webkit-transition: all 0.8s;
+      transition: all 0.8s;
+
+    }
+
+    .adv_box:hover img {
+      transform: scale(1.05, 1.05);
+      -moz-transform: scale(1.05, 1.05);
+      -webkit-transform: scale(1.05, 1.05);
+      -o-transform: scale(1.05, 1.05);
+    }
+
+    .adv_box a::before,
+    .adv_box a::after {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      bottom: 10px;
+      left: 10px;
+      content: '';
+      opacity: 1;
+      -webkit-transition: opacity 0.8s, -webkit-transform 0.8s;
+      transition: opacity 0.8s, transform 0.8s;
+    }
+
+    .adv_box a::before {
+      border-top: 1px solid #fff;
+      border-bottom: 1px solid #fff;
+      -webkit-transform: scale(0, 1);
+      transform: scale(0, 1);
+    }
+
+    .adv_box a::after {
+      border-right: 1px solid #fff;
+      border-left: 1px solid #fff;
+      -webkit-transform: scale(1, 0);
+      transform: scale(1, 0);
+    }
+
+    .adv_box:hover a::before,
+    .adv_box:hover a::after {
+      opacity: 1;
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+
+    .product_div {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product_div img {
+      width: 586px;
+      height: 320px;
+      display: block;
+      overflow: hidden;
+      opacity: 0.95;
+      -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+      transition: opacity 0.35s, transform 0.35s;
+      -webkit-transform: scale3d(1.05, 1.05, 1);
+      transform: scale3d(1.05, 1.05, 1);
+    }
+
+    .product_div:hover img {
+      opacity: 0.6;
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+
+    .pro_intro {
+      width: 400px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pro_intro img {
+      width: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+
+    .pro_intro:before {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 100%;
+      top: 0;
+      left: -250px;
+      overflow: hidden;
+      z-index: 10;
+      background-image: linear-gradient(0deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+      -moz-transform: skewX(-25deg);
+      -webkit-transform: skewX(-25deg);
+      -o-transform: skewX(-25deg);
+      -o-transition: all .6s ease;
+      -moz-transition: all .6s ease;
+      -webkit-transition: all .6s ease;
+      transition: all .6s ease;
+    }
+
+    .pro_intro:hover::before {
+      left: 110%;
+    }
+
+    .ab4_pic img {
+      width: 400px;
+      transition: all 0.8s;
+      -webkit-transition: all 0.8s;
+      -moz-transition: all 0.8s;
+      margin: 60px auto 40px;
+    }
+
+    .ab4_pic img:hover {
+      transform: translateY(-10px);
+      -webkit-transform: translateY(-10px);
+      -moz-transform: translateY(-10px);
+    }
+
+    .memb_div,
+    .memb_div img {
+      width: 200px;
+    }
+
+    .memb_div:hover img {
+      transform: rotateY(360deg);
+      -webkit-transform: rotateY(360deg);
+      -moz-transform: rotateY(360deg);
+      -webkit-transition: all 1s;
+      -moz-transition: all 1s;
+    }
+
+    .pic_list img {
+      width: 100%;
+    }
+
+    .pic_list {
+      width: 200px;
+      margin: 100px 0;
+      padding: 10px;
+      -webkit-transition: all 0.8s;
+      -moz-transition: all 0.8s;
+      transition: all 0.8s;
+    }
+
+    .pic_list:hover {
+      webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px;
+      -moz-box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px;
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px;
+    }
+
+    .div1 {
+      width: 200px;
+      height: 200px;
+      transition: all 2s;
+      margin: 150px 0;
+      background-color: green;
+    }
+
+    .div1:hover {
+      /* transform: skew(0, 30deg); */
+      /* transform: skewX(30deg); */
+      transform: skewY(30deg);
+      /* transform: skew(30deg, 0); */
+      /* transform: skew(30deg, 30deg); */
+      transform-origin: left top;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="div1"></div>
+  <div class="letter-box">
+    <div class="letter-border">
+    </div>
+  </div>
+  <div class="adv_box">
+    <img src="./01.png" />
+    <a></a>
+  </div>
+  <div class="product_div">
+    <img src="./01.png" />
+  </div>
+  <div class="pro_intro">
+    <img src="./01.png" />
+  </div>
+  <div class="ab4_pic">
+    <img src="./01.png" />
+  </div>
+  <div class="memb_div">
+    <img src="./01.png" />
+  </div>
+  <div class="pic_list">
+    <img src="./01.png" />
+  </div>
+</body>
+
+</html>
